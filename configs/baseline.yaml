@@ -1,0 +1,32 @@
+experiment_name: baseline_v1
+data:
+  raw_path: data/raw/heart.csv
+  processed_dir: data/processed
+  target_column: target
+  test_size: 0.15
+  val_size: 0.15
+  random_state: 42
+
+preprocessing:
+  scale_numeric: true
+  scaler: standard   # standard | minmax
+  encode_categorical: onehot
+
+models:
+  logistic_regression:
+    max_iter: 1000
+    class_weight: balanced
+  random_forest:
+    n_estimators: 300
+    max_depth: null
+    random_state: 42
+  xgboost:
+    n_estimators: 300
+    max_depth: 4
+    learning_rate: 0.05
+    eval_metric: logloss
+    random_state: 42
+
+evaluation:
+  metrics: [roc_auc, precision, recall, specificity, f1]
+  threshold: 0.5   # baseline default; Phase 2 sweeps this

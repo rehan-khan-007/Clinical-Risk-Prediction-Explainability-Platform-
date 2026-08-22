@@ -1,0 +1,42 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: clinical
+      POSTGRES_PASSWORD: clinical_dev_password
+      POSTGRES_DB: clinical_risk
+    ports:
+      - "5434:5432"
+    volumes:
+      - clinical_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clinical -d clinical_risk"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://clinical:clinical_dev_password@postgres:5432/clinical_risk
+    ports:
+      - "8001:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8001
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  clinical_pg_data:

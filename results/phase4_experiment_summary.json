@@ -1,0 +1,68 @@
+[
+  {
+    "name": "rf_standard_scaler",
+    "model": "random_forest",
+    "config_hash": "4aa8381123",
+    "run_id": "9ecaaff98b6b482abd97eee2818e06f1",
+    "roc_auc": 0.798740396881414,
+    "precision": 0.7459138187221397,
+    "recall": 0.6902376743272441,
+    "specificity": 0.7697191227395151,
+    "f1": 0.7169965313201387
+  },
+  {
+    "name": "rf_minmax_scaler",
+    "model": "random_forest",
+    "config_hash": "18d9ee37a7",
+    "run_id": "8463556801124694ba65497ccc7cc32d",
+    "roc_auc": 0.7988298424616573,
+    "precision": 0.7460182629008282,
+    "recall": 0.690041249263406,
+    "specificity": 0.7699115044247787,
+    "f1": 0.7169387755102041
+  },
+  {
+    "name": "rf_shallow",
+    "model": "random_forest",
+    "config_hash": "3eee69ac11",
+    "run_id": "5e8233fd51a441c7bed65da3420ae9a4",
+    "roc_auc": 0.7976812773206744,
+    "precision": 0.7520860781730347,
+    "recall": 0.6727558436456492,
+    "specificity": 0.7828010773374374,
+    "f1": 0.7102125453602903
+  },
+  {
+    "name": "rf_deep",
+    "model": "random_forest",
+    "config_hash": "0ef4a55ffc",
+    "run_id": "ab515f04216d404daee755621181111c",
+    "roc_auc": 0.7910639670803986,
+    "precision": 0.7374791318864775,
+    "recall": 0.6941661756040071,
+    "specificity": 0.7579838399384379,
+    "f1": 0.7151674592734999
+  },
+  {
+    "name": "xgboost_standard_scaler",
+    "model": "xgboost",
+    "config_hash": "2b9173971a",
+    "run_id": "ae7ddaa3a1724c0eba1c9a025223e14d",
+    "roc_auc": 0.799553210446367,
+    "precision": 0.7472573839662447,
+    "recall": 0.6957375761147122,
+    "specificity": 0.7695267410542517,
+    "f1": 0.7205777642152376
+  },
+  {
+    "name": "logistic_regression_standard_scaler",
+    "model": "logistic_regression",
+    "config_hash": "2c02d1b112",
+    "run_id": "5c2c76fc34ca496e9ce8047b57a527ff",
+    "roc_auc": 0.7866667739862474,
+    "precision": 0.7430974978429681,
+    "recall": 0.6766843449224121,
+    "specificity": 0.7708734128510966,
+    "f1": 0.7083376169425311
+  }
+]
