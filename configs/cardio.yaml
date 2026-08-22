@@ -1,0 +1,45 @@
+experiment_name: cardio_baseline_v1
+data:
+  raw_path: data/raw/cardio_train.csv
+  delimiter: ";"
+  processed_dir: data/processed
+  target_column: cardio
+  id_column: id
+  test_size: 0.15   # final held-out test set, untouched until Phase 2+
+  random_state: 42
+
+cleaning:
+  age_in_days: true         # convert to years
+  ap_hi_range: [80, 250]    # systolic BP, mmHg — drop outside this range
+  ap_lo_range: [40, 200]    # diastolic BP, mmHg
+  require_hi_gte_lo: true   # drop physiologically invalid rows (systolic < diastolic)
+  height_range: [120, 220]  # cm
+  weight_range: [30, 200]   # kg
+
+preprocessing:
+  scale_numeric: true
+  scaler: standard
+
+cross_validation:
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+
+models:
+  logistic_regression:
+    max_iter: 1000
+    class_weight: balanced
+  random_forest:
+    n_estimators: 300
+    max_depth: 12
+    random_state: 42
+  xgboost:
+    n_estimators: 300
+    max_depth: 5
+    learning_rate: 0.05
+    eval_metric: logloss
+    random_state: 42
+
+evaluation:
+  metrics: [roc_auc, precision, recall, specificity, f1]
+  threshold: 0.5

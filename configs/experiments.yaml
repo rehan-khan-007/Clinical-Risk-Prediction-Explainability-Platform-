@@ -1,0 +1,47 @@
+# Phase 4: config-driven preprocessing + model variants.
+# Each variant overrides fields from configs/cardio.yaml. Every run is
+# logged to MLflow with its exact config, so any past result is
+# reproducible from (config + code version) alone.
+
+base_config: configs/cardio.yaml
+
+variants:
+  - name: rf_standard_scaler
+    description: Random Forest with StandardScaler (matches Phase 1-3 baseline)
+    preprocessing:
+      scaler: standard
+    model: random_forest
+
+  - name: rf_minmax_scaler
+    description: Random Forest with MinMaxScaler instead of StandardScaler
+    preprocessing:
+      scaler: minmax
+    model: random_forest
+
+  - name: rf_shallow
+    description: Random Forest with reduced max_depth (8 vs 12) — checks overfitting sensitivity
+    preprocessing:
+      scaler: standard
+    model: random_forest
+    model_overrides:
+      max_depth: 8
+
+  - name: rf_deep
+    description: Random Forest with increased max_depth (20 vs 12) — checks overfitting sensitivity
+    preprocessing:
+      scaler: standard
+    model: random_forest
+    model_overrides:
+      max_depth: 20
+
+  - name: xgboost_standard_scaler
+    description: XGBoost with StandardScaler, for comparison against RF variants
+    preprocessing:
+      scaler: standard
+    model: xgboost
+
+  - name: logistic_regression_standard_scaler
+    description: Logistic Regression with StandardScaler — simplest, most interpretable baseline
+    preprocessing:
+      scaler: standard
+    model: logistic_regression

@@ -1,0 +1,129 @@
+{
+  "sample_size": 1000,
+  "global_importance": [
+    {
+      "feature": "ap_hi",
+      "mean_abs_shap": 0.15019410848620166
+    },
+    {
+      "feature": "age",
+      "mean_abs_shap": 0.055251032995794945
+    },
+    {
+      "feature": "ap_lo",
+      "mean_abs_shap": 0.04739964576156269
+    },
+    {
+      "feature": "cholesterol",
+      "mean_abs_shap": 0.04508942496285416
+    },
+    {
+      "feature": "weight",
+      "mean_abs_shap": 0.02409628540503539
+    },
+    {
+      "feature": "active",
+      "mean_abs_shap": 0.011297532562134737
+    },
+    {
+      "feature": "gluc",
+      "mean_abs_shap": 0.005841652361449336
+    },
+    {
+      "feature": "smoke",
+      "mean_abs_shap": 0.0042293946119594476
+    },
+    {
+      "feature": "height",
+      "mean_abs_shap": 0.004174057652040233
+    },
+    {
+      "feature": "gender",
+      "mean_abs_shap": 0.0034736750314055044
+    },
+    {
+      "feature": "alco",
+      "mean_abs_shap": 0.0021421737287671224
+    }
+  ],
+  "local_examples": [
+    {
+      "row_index": 129,
+      "risk_probability": 0.9113135339064937,
+      "top_contributions": [
+        {
+          "feature": "ap_hi",
+          "shap_value": 0.2736329943276132
+        },
+        {
+          "feature": "ap_lo",
+          "shap_value": 0.12489313821238528
+        },
+        {
+          "feature": "weight",
+          "shap_value": 0.03609319794119065
+        },
+        {
+          "feature": "cholesterol",
+          "shap_value": -0.011955790030011666
+        },
+        {
+          "feature": "age",
+          "shap_value": -0.009275099171395216
+        }
+      ]
+    },
+    {
+      "row_index": 570,
+      "risk_probability": 0.8946691112484494,
+      "top_contributions": [
+        {
+          "feature": "ap_hi",
+          "shap_value": 0.25749259019130794
+        },
+        {
+          "feature": "ap_lo",
+          "shap_value": 0.10731297245591528
+        },
+        {
+          "feature": "weight",
+          "shap_value": 0.031022753970227527
+        },
+        {
+          "feature": "cholesterol",
+          "shap_value": 0.023683809403211124
+        },
+        {
+          "feature": "height",
+          "shap_value": -0.014585796376652553
+        }
+      ]
+    },
+    {
+      "row_index": 962,
+      "risk_probability": 0.8939397418927507,
+      "top_contributions": [
+        {
+          "feature": "ap_hi",
+          "shap_value": 0.24627114590984647
+        },
+        {
+          "feature": "age",
+          "shap_value": 0.08597399626035228
+        },
+        {
+          "feature": "ap_lo",
+          "shap_value": 0.06840895753492972
+        },
+        {
+          "feature": "cholesterol",
+          "shap_value": -0.014918547360311552
+        },
+        {
+          "feature": "gluc",
+          "shap_value": 0.004312421792582314
+        }
+      ]
+    }
+  ]
+}

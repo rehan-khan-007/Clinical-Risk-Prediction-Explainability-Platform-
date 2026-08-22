@@ -1,0 +1,26 @@
+{
+  "version": "v1.0.0-xgboost",
+  "model_type": "xgboost",
+  "feature_columns": [
+    "age",
+    "gender",
+    "height",
+    "weight",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc",
+    "smoke",
+    "alco",
+    "active"
+  ],
+  "threshold": 0.45,
+  "test_metrics": {
+    "roc_auc": 0.799553210446367,
+    "precision": 0.7198012232415902,
+    "recall": 0.7397367904144568,
+    "specificity": 0.7179684494036168,
+    "f1": 0.7296328586651167
+  },
+  "trained_on_rows": 58300
+}
